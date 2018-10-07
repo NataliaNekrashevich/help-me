@@ -1,7 +1,7 @@
 module.exports = function count(s, pairs) {
   let answer = 0, check, val;
   const N = pairs.reduce((a, b) => a * Math.pow(b[0], b[1]), 1);
-  if(!isFinite(N)) return -1;
+  if(N>10000000) return -1;
   for (let k = 0; k < N; k++) {
     for (let j = 0; j < s.length; j++) {
       val = ( getCommonDiviser(k + j, N) === 1 ) ? 1 : 0;
